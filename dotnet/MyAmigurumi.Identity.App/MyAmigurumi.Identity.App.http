@@ -1,0 +1,6 @@
+@MyAmigurumi.Identity.App_HostAddress = http://localhost:5082
+
+GET {{MyAmigurumi.Identity.App_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

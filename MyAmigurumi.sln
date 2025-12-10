@@ -33,7 +33,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		compose.yaml = compose.yaml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyAmigurumi.Identity.Persistence.IdentityDb", "MyAmigurumi.Identity.Persistence.IdentityDb\MyAmigurumi.Identity.Persistence.IdentityDb.csproj", "{6C97EC9C-F73F-4EB1-BC75-222EDC87A623}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyAmigurumi.Identity.Persistence.IdentityDb", "dotnet\MyAmigurumi.Identity.Persistence.IdentityDb\MyAmigurumi.Identity.Persistence.IdentityDb.csproj", "{328708B7-F638-4380-99E7-854182841E65}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,10 +57,10 @@ Global
 		{D9B0E208-AEC0-49CD-8962-FDB25701EE02}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9B0E208-AEC0-49CD-8962-FDB25701EE02}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9B0E208-AEC0-49CD-8962-FDB25701EE02}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6C97EC9C-F73F-4EB1-BC75-222EDC87A623}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6C97EC9C-F73F-4EB1-BC75-222EDC87A623}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6C97EC9C-F73F-4EB1-BC75-222EDC87A623}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6C97EC9C-F73F-4EB1-BC75-222EDC87A623}.Release|Any CPU.Build.0 = Release|Any CPU
+		{328708B7-F638-4380-99E7-854182841E65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{328708B7-F638-4380-99E7-854182841E65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{328708B7-F638-4380-99E7-854182841E65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{328708B7-F638-4380-99E7-854182841E65}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E797DF8B-A0A0-4DC6-991E-DC31C5BA6AFD} = {3CB44992-3CBF-4A43-9BAF-4EEA3BE6F769}
@@ -73,6 +73,6 @@ Global
 		{FA34DCEC-30D1-4136-B323-7409B58BE78D} = {3A22B1BD-A3CB-4C89-A054-8251A4F3A1B1}
 		{219284BE-5EDE-4A1E-97A8-F278720B76DE} = {ED32FFCC-9107-47C7-8143-B93A44BB8B53}
 		{D9B0E208-AEC0-49CD-8962-FDB25701EE02} = {08138B38-8A3F-4F63-A879-103876D6184B}
-		{6C97EC9C-F73F-4EB1-BC75-222EDC87A623} = {219284BE-5EDE-4A1E-97A8-F278720B76DE}
+		{328708B7-F638-4380-99E7-854182841E65} = {219284BE-5EDE-4A1E-97A8-F278720B76DE}
 	EndGlobalSection
 EndGlobal

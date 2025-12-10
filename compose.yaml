@@ -1,7 +1,0 @@
-﻿services:
-  myamigurumi.identity.app:
-    image: myamigurumi.identity.app
-    build:
-      context: .
-      dockerfile: dotnet/MyAmigurumi.Identity.App/Dockerfile
-

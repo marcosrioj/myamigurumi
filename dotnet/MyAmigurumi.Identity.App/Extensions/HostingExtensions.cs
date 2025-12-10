@@ -1,4 +1,5 @@
 using Duende.IdentityServer.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using MyAmigurumi.Identity.Persistence.IdentityDb;
@@ -8,6 +9,8 @@ namespace MyAmigurumi.Identity.App.Extensions;
 
 internal static class HostingExtensions
 {
+    private const string _5DaysTokenProviderName = "5DaysProvider";
+    
     public static WebApplication ConfigureServices(this WebApplicationBuilder builder)
     {
         builder.Services.AddControllers();
@@ -17,6 +20,24 @@ internal static class HostingExtensions
         //ApplicationDbContext - SQL Server
         builder.Services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+        
+        builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
+            {
+                options.Password.RequireDigit = true;
+                options.Password.RequireLowercase = true;
+                options.Password.RequireUppercase = true;
+                options.Password.RequireNonAlphanumeric = true;
+                options.Password.RequiredLength = 8;
+                options.Tokens.PasswordResetTokenProvider = _5DaysTokenProviderName;
+                // Lockout settings.
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(2);
+                options.Lockout.MaxFailedAccessAttempts = 10;
+                options.Lockout.AllowedForNewUsers = true;
+            })
+            .AddEntityFrameworkStores<ApplicationDbContext>()
+            .AddDefaultTokenProviders()
+            .AddTokenProvider<
+                DataProtectorTokenProvider<ApplicationUser>>(_5DaysTokenProviderName); //Added extended token provider
 
         builder.Services.AddIdentityServer(options => { })
             .AddAspNetIdentity<ApplicationUser>()
@@ -74,6 +95,8 @@ internal static class HostingExtensions
             });
         });
 
+        builder.Services.AddRazorPages();
+
         return builder.Build();
     }
 
@@ -93,7 +116,8 @@ internal static class HostingExtensions
         app.UseAuthorization();
 
         app.MapControllers();
-        app.MapRazorPages();
+        app.MapRazorPages()
+            .RequireAuthorization();
 
         return app;
     }
